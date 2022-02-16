@@ -1,0 +1,87 @@
+header {
+  background: linear-gradient(90deg, $primaryColor-6 25%, $primaryColor-3 88%);
+  height: 75px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  & > div {
+    border: 1px solid gold;
+    width: 200px;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+  .logo-box {
+    position: relative;
+    color: $primaryColor-1;
+    padding: 10px;
+    
+    .rocket-logo {
+      fill: $primaryColor-1;
+      width: 35px;
+      height: 35px;
+    }
+
+    p {
+      // border: 1px solid red;
+      font-size: 20px;
+      pointer-events: none;  
+    }
+    
+    .small-the {
+      position: absolute;
+      font-size: 12px;
+      top: 15px;
+      left: 55px;
+    }
+  }
+
+  button {
+    background-color: $primaryColor-1;
+    border-radius: 10px;
+    width: 175px;
+    height: 40px;
+
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: background-color .5s ease;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondaryColor-1;
+    }
+  }
+  
+
+  .icon-bg-search {
+    background-color: $primaryColor-1;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+
+    @include flexCenter();
+
+    transition: background-color .5s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondaryColor-1;
+    }
+
+    .search-logo {
+      fill: $primaryColor-6;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
