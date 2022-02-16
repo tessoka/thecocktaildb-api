@@ -2,7 +2,9 @@
   background-color: $primaryColor-3;
   border-radius: 10px;
 
-  position: absolute;
+  position: -webkit-sticky;
+
+  position: fixed;
   bottom: 15px;
   right: 15px;
 

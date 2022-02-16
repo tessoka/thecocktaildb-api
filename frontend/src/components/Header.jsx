@@ -13,7 +13,7 @@ const Header = () => {
       </div>
       <div className="header-mid">
         <Link to="/cocktail">
-          <button className="btn">Get Cocktail</button>
+          <button className="btn">Get a Cocktail</button>
         </Link>
       </div>
       <div className="search-box">

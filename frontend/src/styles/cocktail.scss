@@ -1,20 +1,20 @@
 .cocktail-container {
   // border: 1px dashed $primaryColor-6;
   border-radius: 10px;
-  background-color: $primaryColor-2;
+  background: linear-gradient(120deg, $primaryColor-6, $primaryColor-3 40%);
 
   max-width: 750px;
 
   margin: 50px auto;
   padding: 25px;
 
-  // color: $primaryColor-1;
+  color: $primaryColor-1;
 
   @include flexCenter();
   // gap: 15px;
 
   h2 {
-    border-bottom: 1px dashed $primaryColor-1;
+    border-bottom: 1px dashed $primaryColor-6;
     padding: 0 10px;
     padding-bottom: 10px;
   }
@@ -22,7 +22,7 @@
 
   .card-top {
     // border: 1px solid red;
-    border-bottom: 1px dashed $primaryColor-1;
+    border-bottom: 1px dashed $primaryColor-6;
     // border-radius: 10px;
 
     width: 100%;
@@ -62,7 +62,7 @@
       flex: 1;
 
       h3 {
-        border-bottom: 1px dashed $primaryColor-1;
+        border-bottom: 1px dashed $primaryColor-6;
         text-align: center;
         padding-bottom: 10px;
         margin-bottom: 10px;
@@ -87,6 +87,7 @@
 
             text-transform: capitalize;
             font-size: 14px;
+            color: $primaryColor-6;
 
             &:hover {
               background-color: $secondaryColor-1;

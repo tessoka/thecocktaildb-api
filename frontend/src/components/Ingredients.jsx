@@ -7,6 +7,9 @@ const Ingredients = ({cocktailData}) => {
 
   // GROUP ingredients & measurements to the appropirate format for easy iteration
   const groupIngredients = (cocktailData) => {
+    ingredients.length = 0
+    measurements.length = 0
+
     for (const key in cocktailData) {
       if (key.includes("strIngredient") && cocktailData[key] !== null && cocktailData[key] !== "") ingredients.push(cocktailData[key])
       if (key.includes("strMeasure") && cocktailData[key] !== null && cocktailData[key] !== "") measurements.push(cocktailData[key])
@@ -17,7 +20,7 @@ const Ingredients = ({cocktailData}) => {
 
   useEffect(() => {
     groupIngredients(cocktailData)
-  }, [])
+  }, [cocktailData])
 
   return (
     <>

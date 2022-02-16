@@ -1,17 +1,19 @@
 .home-container {
     // border: 1px dashed $primaryColor-6;
     border-radius: 10px;
-    background-color: $primaryColor-2;
+    background: linear-gradient(120deg, $primaryColor-6, $primaryColor-3 40%);
   
     max-width: 750px;
   
     margin: 50px auto;
     padding: 25px;
 
+    color: $primaryColor-1;
+
     @include flexCenter();
   
     h2 {
-      border-bottom: 1px dashed $primaryColor-1;
+      border-bottom: 1px dashed $primaryColor-6;
       padding: 0 10px;
       padding-bottom: 10px;
       margin-bottom: 25px;

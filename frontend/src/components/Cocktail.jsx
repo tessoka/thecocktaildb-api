@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { backendUrl } from '../utilities/ServerUrl'
 import Ingredients from './Ingredients'
+import Back from './Back'
 
 
 const Cocktail = () => {
@@ -48,8 +49,10 @@ const Cocktail = () => {
               </div>
             </div>
           </div>
+          <button className="btn" onClick={getData}>New Cocktail</button>
         </div>
       }
+      <Back />
     </>
   )
 }
