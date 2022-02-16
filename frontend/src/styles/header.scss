@@ -8,9 +8,11 @@ header {
 
 
   & > div {
-    border: 1px solid gold;
+    // border: 1px solid gold;
+    
     width: 200px;
     height: 100%;
+    padding: 10px;
 
     display: flex;
     align-items: center;
@@ -21,7 +23,7 @@ header {
   .logo-box {
     position: relative;
     color: $primaryColor-1;
-    padding: 10px;
+    justify-content: flex-start;
     
     .rocket-logo {
       fill: $primaryColor-1;
@@ -49,6 +51,7 @@ header {
     width: 175px;
     height: 40px;
 
+    color: $primaryColor-6;
     font-size: 16px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -61,27 +64,31 @@ header {
       background-color: $secondaryColor-1;
     }
   }
+
+  .search-box {
+    justify-content: flex-end;
+
+    .icon-bg-search {
+      background-color: $primaryColor-1;
+      border-radius: 10px;
+      width: 50px;
+      height: 50px;
   
-
-  .icon-bg-search {
-    background-color: $primaryColor-1;
-    border-radius: 10px;
-    width: 50px;
-    height: 50px;
-
-    @include flexCenter();
-
-    transition: background-color .5s ease;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $secondaryColor-1;
-    }
-
-    .search-logo {
-      fill: $primaryColor-6;
-      width: 30px;
-      height: 30px;
+      @include flexCenter();
+  
+      transition: background-color .5s ease;
+      cursor: pointer;
+  
+      &:hover {
+        background-color: $secondaryColor-1;
+      }
+  
+      .search-logo {
+        fill: $primaryColor-6;
+        width: 30px;
+        height: 30px;
+      }
     }
   }
+
 }
