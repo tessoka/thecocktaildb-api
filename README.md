@@ -12,8 +12,18 @@ The displayed data is fatched from theCocktailDb Api.
 - Semantic HTML5 markup
 - Node.js
 
+NPM packages used:
+- Sass
+- Axios
+- React-router-dom
+
 ## Installation
 
-Backend server runs on port 5000 as default.
-After installing the packages you can run the server in dev environment by: npm run dev
+After installing the packages the backend server runs on port 5000 as default.
+- To run backend in dev environment: npm run dev
+- To run backend live: npm start
+- To run frontend live: npm start
+
+
+
 
