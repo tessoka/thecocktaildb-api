@@ -1,0 +1,173 @@
+.cocktail-container {
+  // border: 1px dashed $primaryColor-6;
+  border-radius: 10px;
+  background: linear-gradient(120deg, $primaryColor-6, $primaryColor-3 40%);
+
+  max-width: 750px;
+
+  margin: 50px auto;
+  padding: 25px;
+
+  color: $primaryColor-1;
+
+  @include flexCenter();
+  // gap: 15px;
+
+  h2 {
+    border-bottom: 1px dashed $primaryColor-6;
+    padding: 0 10px;
+    padding-bottom: 10px;
+  }
+
+
+  .card-top {
+    // border: 1px solid red;
+    border-bottom: 1px dashed $primaryColor-6;
+    // border-radius: 10px;
+
+    width: 100%;
+    min-height: 100px;
+    padding: 25px;
+    
+    @include flexCenter();
+    
+  }
+
+  .card-bot {
+    // border: 1px solid rebeccapurple;
+
+    width: 100%;
+    min-height: 200px;
+    padding: 25px;
+    
+    @include flexCenter();
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card-bot-left {
+      // border: 1px dashed $primaryColor-1;
+      max-width: 250px;
+      max-height: 250px;
+      align-self: flex-start;
+
+      img {
+        max-width: 250px;
+      }
+    }
+
+    .card-bot-right {
+      // border: 1px dashed $primaryColor-1;
+      min-height: 250px;
+      padding: 15px;
+      flex: 1;
+
+      h3 {
+        border-bottom: 1px dashed $primaryColor-6;
+        text-align: center;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+
+      .ingredients-box {
+        // border: 1px solid red;
+        padding: 15px;
+        display: flex;
+        gap: 5px;
+
+        & > ul {
+          width: 50%;
+
+          & > li {
+            // border: 1px solid red;
+            border-radius: 10px;
+            background-color: $primaryColor-1;
+
+            padding: 5px 10px;
+            margin-bottom: 10px;
+
+            text-transform: capitalize;
+            font-size: 14px;
+            color: $primaryColor-6;
+
+            &:hover {
+              background-color: $secondaryColor-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.search-input {
+  // border: 1px solid $secondaryColor-1;
+  border-radius: 10px;
+  background-color: rgba($primaryColor-1, .5);
+
+  position: absolute;
+  top: 12.5px;
+  right: 65px;
+
+  width: 250px;
+  height: 50px;
+  padding: 0 15px;
+
+  color: $primaryColor-6;
+  font-size: 18px;
+
+  z-index: 1;
+}
+
+.search-box {
+  position: absolute;
+  top: 12.5px;
+  right: 12.5px;
+
+  .icon-bg-search {
+    background-color: $primaryColor-1;
+    border-radius: 10px;
+    width: 50px;
+    height: 50px;
+
+    @include flexCenter();
+
+    transition: background-color .5s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondaryColor-1;
+    }
+
+    .search-logo {
+      fill: $primaryColor-6;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.btn-search {
+  // border: 1px solid red;
+  border-radius: 10px;
+  background-color: $secondaryColor-1;
+  
+  position: absolute;
+  top: 0;
+  right: 325px;
+
+  width: 50px;
+  height: 50px;
+
+  color: $primaryColor-6;
+  letter-spacing: 1px;
+  font-size: 20px;
+  text-transform: uppercase;
+
+  transition: transform .5s ease;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
