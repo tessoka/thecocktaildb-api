@@ -1,14 +1,7 @@
 const express = require("express")
 const app = express()
 const cors = require("cors")
-
-
-// CHECK if server
-app.use("/", (req, res, next) => {
-  console.log("up and running")
-  next()
-})
-
+const port = 5000
 
 // IMPORT ROUTES
 const cocktailRoute = require("./routes/cocktail")
@@ -26,4 +19,4 @@ app.use("/api/cocktail", cocktailRoute)
 
 
 
-app.listen(5000)
+app.listen(port, () => console.log("Server listening on port: " + port))

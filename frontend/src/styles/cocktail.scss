@@ -1,0 +1,99 @@
+.cocktail-container {
+  // border: 1px dashed $primaryColor-6;
+  border-radius: 10px;
+  background-color: $primaryColor-2;
+
+  max-width: 750px;
+
+  margin: 50px auto;
+  padding: 25px;
+
+  // color: $primaryColor-1;
+
+  @include flexCenter();
+  // gap: 15px;
+
+  h2 {
+    border-bottom: 1px dashed $primaryColor-1;
+    padding: 0 10px;
+    padding-bottom: 10px;
+  }
+
+
+  .card-top {
+    // border: 1px solid red;
+    border-bottom: 1px dashed $primaryColor-1;
+    // border-radius: 10px;
+
+    width: 100%;
+    min-height: 100px;
+    padding: 25px;
+    
+    @include flexCenter();
+    
+  }
+
+  .card-bot {
+    // border: 1px solid rebeccapurple;
+
+    width: 100%;
+    min-height: 200px;
+    padding: 25px;
+    
+    @include flexCenter();
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .card-bot-left {
+      // border: 1px dashed $primaryColor-1;
+      max-width: 250px;
+      max-height: 250px;
+      align-self: flex-start;
+
+      img {
+        max-width: 250px;
+      }
+    }
+
+    .card-bot-right {
+      // border: 1px dashed $primaryColor-1;
+      min-height: 250px;
+      padding: 15px;
+      flex: 1;
+
+      h3 {
+        border-bottom: 1px dashed $primaryColor-1;
+        text-align: center;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+
+      .ingredients-box {
+        // border: 1px solid red;
+        padding: 15px;
+        display: flex;
+        gap: 5px;
+
+        & > ul {
+          width: 50%;
+
+          & > li {
+            // border: 1px solid red;
+            border-radius: 10px;
+            background-color: $primaryColor-1;
+
+            padding: 5px 10px;
+            margin-bottom: 10px;
+
+            text-transform: capitalize;
+            font-size: 14px;
+
+            &:hover {
+              background-color: $secondaryColor-1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
