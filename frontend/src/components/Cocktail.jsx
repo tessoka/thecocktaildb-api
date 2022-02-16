@@ -18,18 +18,18 @@ const Cocktail = () => {
   }
 
   const handleClickSearchGo = () => {
-    getData()
+    getData(searchText)
   }
 
-  
+
   // ----- COCKTAIL DISPLAY CODE -----
   const [ isLoading, setIsLoading ] = useState(true)
   const [ cocktailData, setCocktailData ] = useState({})
   let response = {}
 
-  const getData = async () => {
+  const getData = async (inputText) => {
     try {
-      const res = await axios.get(backendUrl + `/api/cocktail?s=${searchText}`)
+      const res = await axios.get(backendUrl + `/api/cocktail?s=${inputText}`)
       response = res.data.drinks[0]
       console.log(response)
     } catch (error) {
@@ -39,9 +39,13 @@ const Cocktail = () => {
     setIsLoading(false)
   }
 
+  const handleClickNewCocktail = () => {
+    getData("")
+  }
+
   useEffect(() => {
     console.log("useEffect was triggered")
-    getData()
+    getData("")
   }, [])
 
 
@@ -81,12 +85,9 @@ const Cocktail = () => {
               </div>
             </div>
           </div>
-          <button className="btn" onClick={getData}>New Cocktail</button>
+          <button className="btn" onClick={handleClickNewCocktail}>New Cocktail</button>
         </div>
       }
-
-
-
       <Back />
     </>
   )
