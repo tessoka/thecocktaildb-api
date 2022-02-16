@@ -12,14 +12,16 @@ const Cocktail = () => {
   const [ isSearchOpen, setIsSearchOpen] = useState(false)
   const [ searchText, setSearchText ] = useState("")
   
-  const handleClickSearchIcon = () => {
+  const handleClickSearchToggle = () => {
     setSearchText("")
     setIsSearchOpen(!isSearchOpen)
   }
 
-  console.log(searchText)
+  const handleClickSearchGo = () => {
+    getData()
+  }
 
-
+  
   // ----- COCKTAIL DISPLAY CODE -----
   const [ isLoading, setIsLoading ] = useState(true)
   const [ cocktailData, setCocktailData ] = useState({})
@@ -27,7 +29,7 @@ const Cocktail = () => {
 
   const getData = async () => {
     try {
-      const res = await axios.get(backendUrl + "/api/cocktail")
+      const res = await axios.get(backendUrl + `/api/cocktail?s=${searchText}`)
       response = res.data.drinks[0]
       console.log(response)
     } catch (error) {
@@ -47,8 +49,10 @@ const Cocktail = () => {
 
   return (
     <>
+
       <div className="search-box">
-        <div className="icon-bg-search" onClick={handleClickSearchIcon}>
+      {searchText !== "" && <button className="btn-search" onClick={handleClickSearchGo}>Go</button>}
+        <div className="icon-bg-search" onClick={handleClickSearchToggle}>
           <svg className="search-logo" viewBox="0 0 512 512"><path d={SearchLogo} /></svg>
         </div>
       </div>
