@@ -97,7 +97,7 @@ const Cocktail = () => {
       }
       <Back />
 
-      {!msgServer && <Servermsg /> }
+      {!msgServer && !isLoading && <Servermsg /> }
     </>
   )
 }
