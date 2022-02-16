@@ -13,6 +13,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/cocktail" element={<Cocktail />} />
+            <Route path="*" element={<div className="center">404 - Nothing to see here...</div>} />
           </Routes>
         </main>
       </div>

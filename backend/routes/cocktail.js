@@ -13,8 +13,10 @@ router.get("/", async (req, res, next) => {
 // FETCH API
   try {
     const response = await axios.get(apiUrl)
+    console.log(response.data)
     res.status(200).json(response.data)
   } catch (error) {
+    console.log("ran on error")
     res.json(error)
   }
 })

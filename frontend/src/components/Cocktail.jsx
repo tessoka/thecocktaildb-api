@@ -3,6 +3,8 @@ import axios from 'axios'
 import { backendUrl } from '../utilities/ServerUrl'
 import Ingredients from './Ingredients'
 import Back from './Back'
+import Spinner from './Spinner'
+import Servermsg from './Servermsg'
 import { SearchLogo } from '../svg/svg-d-texts'
 
 
@@ -25,17 +27,23 @@ const Cocktail = () => {
   // ----- COCKTAIL DISPLAY CODE -----
   const [ isLoading, setIsLoading ] = useState(true)
   const [ cocktailData, setCocktailData ] = useState({})
+  const [ msgServer, setMsgServer ] = useState(false)
+
   let response = {}
 
   const getData = async (inputText) => {
     try {
       const res = await axios.get(backendUrl + `/api/cocktail?s=${inputText}`)
-      response = res.data.drinks[0]
-      console.log(response)
+      if (res.data.drinks !== null) {
+        response = res.data.drinks[0]
+        setCocktailData(response)
+        setMsgServer(true)
+      } else {
+        setMsgServer(false)
+      }
     } catch (error) {
       console.log(error)
     }
-    setCocktailData(response)
     setIsLoading(false)
   }
 
@@ -44,7 +52,6 @@ const Cocktail = () => {
   }
 
   useEffect(() => {
-    console.log("useEffect was triggered")
     getData("")
   }, [])
 
@@ -67,7 +74,7 @@ const Cocktail = () => {
       }
 
       {
-        isLoading ? <div>Loading...</div>
+        isLoading ? <Spinner />
         :
         <div className="cocktail-container">
           <h2>{cocktailData.strDrink}</h2>
@@ -89,6 +96,8 @@ const Cocktail = () => {
         </div>
       }
       <Back />
+
+      {!msgServer && <Servermsg /> }
     </>
   )
 }
